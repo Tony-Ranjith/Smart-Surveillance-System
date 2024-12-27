@@ -1,0 +1,140 @@
+/* Apply background image directly in the body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url("../images/background.jpg"); /* Ensure correct path to background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background stays fixed */
+    color: white;
+}
+
+/* Navbar Styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Make navbar slightly transparent */
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ccff;
+}
+
+/* Logo Styling */
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #00ccff;
+    margin-left: 10px;
+}
+
+/* Hero Section Styles */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 24px;
+}
+
+/* Detection Options Styles */
+.detection-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.option {
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.option img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s;
+}
+
+.option p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Hover Effects */
+.option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ccff;
+}
+
+.option img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
