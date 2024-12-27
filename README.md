@@ -78,8 +78,11 @@ Stores frames for review, automatically cleaning up after a set duration.
 ![Input Screen](images/Home-Page.jpg)
 
 ### Detection Pages
-![Input Screen](images/detection-page.jpg)  
+![Input Screen](images/detection-page.jpg) 
+
 ![Input Screen](images/detection-page-1.jpg)
 
-### Real time Telegram Notifications on Mobile
-![Input Screen](images/notification-2.jpg)   ![Input Screen](images/notification-1.jpg)
+### Real time Telegram Notifications on Mobile with Captured frames and alert Messages
+![Input Screen](images/notification-2.jpg)   
+
+![Input Screen](images/notification-1.jpg)
