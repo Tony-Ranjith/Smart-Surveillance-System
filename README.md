@@ -76,3 +76,8 @@ Stores frames for review, automatically cleaning up after a set duration.
 # Screen Shots Of Project
 ### Home Page
 ![Input Screen](images/Home-Page.jpg)
+### Detection Pages
+![Input Screen](images/detection-page.jpg)  
+![Input Screen](images/detection-page-1.jpg)
+### Real time Telegram Notifications
+![Input Screen](images/notification.jpg)  ![Input Screen](images/notification-1.jpg)
