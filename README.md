@@ -74,4 +74,4 @@ Stores frames for review, automatically cleaning up after a set duration.
 2. Expand with advanced models like YOLOv8 or custom fine-tuned models.
 3. Develop a web-based dashboard for monitoring and managing detections
 # Screen Shots Of Project
-![Input Screen](images/Email-Spam.jpg)
+![Input Screen](images/Home Page.jpg)
