@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fall Detection System</title>
+    <link rel="stylesheet" href="static/css/crash_styles.css">
+    <style>
+        .nav-link {
+           margin: 20px 0;
+           text-decoration: none;
+           color: black;
+           font-weight: bold;
+           padding: 10px 20px;
+           border: 2px solid rgb(8, 84, 170);
+           border-radius: 5px;
+           transition: background 0.3s;
+       }
+       .home {
+            padding-top : 5px;
+
+        }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fall Detection System</h1>
+        <div class="video-container">
+            <img id="videoFeed" src="" alt="Video Feed" />
+        </div>
+        <div class="controls">
+            <button id="startLiveDetection_fall">Start Live Detection</button>
+            <button id="stopLiveDetection_fall">Stop Live Detection</button>
+            <form id="videoForm_fall" enctype="multipart/form-data">
+                <input type="file" name="video" accept="video/*" required>
+                <button type="submit">Start Video Detection</button>
+            </form>
+            <button id="stopVideoDetection_fall">Stop Video Detection</button>
+            <div class="home">
+                <a href="/" class="nav-link">Back to Main Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch live video feed
+        function fetchLiveFeed_fall() {
+            const videoFeed = document.getElementById('videoFeed');
+            videoFeed.src = '/video_feed';  // Make sure this matches the Python route
+        }
+
+        // Start live detection
+        document.getElementById('startLiveDetection_fall').addEventListener('click', async () => {
+            await fetch('/start_live_detection');  // Ensure this matches the Python function
+            fetchLiveFeed_fall();  // Keep fetching the live feed
+        });
+
+        // Stop live detection
+        document.getElementById('stopLiveDetection_fall').addEventListener('click', async () => {
+            await fetch('/stop_live_detection');  // Ensure this matches the Python function
+            document.getElementById('videoFeed').src = '';  // Clear the video feed
+        });
+
+        // Start video detection on form submit
+        document.getElementById('videoForm_fall').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/start_video_detection', { method: 'POST', body: formData });  // Ensure this matches the Python function
+            fetchLiveFeed_fall();  // Fetch live feed after starting video detection
+        });
+
+        // Stop video detection
+        document.getElementById('stopVideoDetection_fall').addEventListener('click', async () => {
+            await fetch('/stop_video_detection');  // Ensure this matches the Python function
+            document.getElementById('videoFeed').src = '';  // Clear the video feed
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Detection System</title>
+    <link rel="stylesheet" href="static/css/crash_styles.css">
+    <style>
+         .nav-link {
+            margin: 20px 0;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid rgb(8, 84, 170);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .home {
+            padding-top : 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evidence Detection System</h1>
+        <div class="video-container">
+            <img id="videoFeed" src="" alt="Video Feed" />
+        </div>
+        <div class="controls">
+            <button id="startLiveDetection">Start Live Detection</button>
+            <button id="stopLiveDetection">Stop Live Detection</button>
+            <form id="videoForm" enctype="multipart/form-data">
+                <input type="file" name="video" accept="video/*" required>
+                <button type="submit">Start Video Detection</button>
+            </form>
+            <button id="stopVideoDetection">Stop Video Detection</button>
+            <div class="home">
+                <a href="/" class="nav-link"> Back To Main Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch live video feed
+        function fetchLiveFeed_evidence() {
+            const videoFeed = document.getElementById('videoFeed');
+            videoFeed.src = '/video_feed_evidence';
+        }
+
+        // Start live detection
+        document.getElementById('startLiveDetection').addEventListener('click', async () => {
+            await fetch('/start_live_detection_evidence');
+            fetchLiveFeed_evidence();
+        });
+
+        // Stop live detection
+        document.getElementById('stopLiveDetection').addEventListener('click', async () => {
+            await fetch('/stop_live_detection_evidence');
+            document.getElementById('videoFeed').src = '';  // Clear the video feed
+        });
+
+        // Start video detection on form submit
+        document.getElementById('videoForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/start_video_detection_evidence', {
+                method: 'POST',
+                body: formData,
+            });
+            fetchLiveFeed_evidence();
+        });
+
+        // Stop video detection
+        document.getElementById('stopVideoDetection').addEventListener('click', async () => {
+            await fetch('/stop_video_detection_evidence');
+            document.getElementById('videoFeed').src = '';  // Clear the video feed
+        });
+    </script>
+</body>
+</html>

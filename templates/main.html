@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Human Activity Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    
+    <style>
+        /* Apply background image directly in the body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Ensures the background stays fixed */
+            color: white;
+        }
+
+        /* Navbar Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Make navbar slightly transparent */
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ccff;
+        }
+
+        /* Logo Styling */
+        .logo img {
+            width: 90px;
+            height: 75px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #00ccff;
+            margin-left: 10px;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+        }
+
+        /* Detection Options Styles */
+        .detection-options {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .option {
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .option img {
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s;
+        }
+
+        .option p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        /* Hover Effects */
+        .option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #00ccff;
+        }
+
+        .option img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    
+</head>
+<body>
+    <header style="height: 75px;">
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Shady Logo">
+                <h1 style="text-shadow: rgb(204, 127, 255) 2px 2px ; font-size: x-large;">Shady</h1>
+            </div>
+            <ul>
+                <li style="font-size :x-large"><a href="#">Home</a></li>
+                <li style="font-size :x-large"><a href="#">YOLO</a></li>
+                <li style="font-size :x-large"><a href="#">Contact Us</a></li>
+                <li style="font-size :x-large"><a href="#">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>S.S.S</h1>
+            <p>Smart Surveillance System using YOLO</p>
+        </div>
+    </section>
+
+    <section class="detection-options">
+        <div class="option">
+            <a href="/object">
+                <img src="{{ url_for('static', filename='images/Object_detection.png') }}" alt="Object Detection">
+                <p>Restricted Area Detection</p>
+            </a>
+        </div>
+        <div class="option">
+            <a href="/crash_detection">
+                <img src="{{ url_for('static', filename='images/Car.png') }}" alt="Vehicle Crash Detection">
+                <p>Vehicle Crash Detection</p>
+            </a>
+        </div>
+        <div class="option">
+            <a href="/fall_detection">
+                <img src="{{ url_for('static', filename='images/Falling.png') }}" alt="Fall Detection">
+                <p>Fall Detection</p>
+            </a>
+        </div>
+        <div class="option">
+            <a href="/social_distance">
+                <img src="{{ url_for('static', filename='images/Distance.png') }}" alt="Social Distancing Detection">
+                <p>Social Distancing Detection</p>
+            </a>
+        </div>
+        <div class="option">
+            <a href="/evidance_detection">
+                <img src="{{ url_for('static', filename='images/Gun.png') }}" alt="Evidence Detection">
+                <p>Evidence Detection</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Shady. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
